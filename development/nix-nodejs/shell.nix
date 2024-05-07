@@ -1,9 +1,9 @@
 with import <nixpkgs> {};
 
-stdenv.mkDerivation {
+pkgs.mkShell {
   name = "nodejs-dev";
 
-  buildInputs = [
+  nativeBuildInputs = with pkgs; [
     nodejs_20
   ];
 

@@ -8,15 +8,15 @@ General configurations for application and development environments.
 
 - [ ] [Imagemagick](https://github.com/rosera/nix-shell-pack/tree/main/applications/imagemagick/README.md/README.md/README.md/README.md/README.md/README.md/README.md/README.md)
 
-
-## Development
-
 ### Software Development
 
 - [ ] [Android Studio]()
 - [ ] [Flutter/Dart]()
 
-### Languages
+
+## Development
+
+### Runtime Languages
 
 - [ ] [Go](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-go/README.md)
 - [ ] [Nodejs](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-nodejs/README.md)

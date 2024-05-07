@@ -5,10 +5,10 @@ Nix Shell Script:
 ```nix
 with import <nixpkgs> {};
 
-stdenv.mkDerivation {
+pkgs.mkShell {
   name = "python-dev";
 
-  buildInputs = [
+  nativeBuildInputs = with pkgs; [
     python313
   ];
 
