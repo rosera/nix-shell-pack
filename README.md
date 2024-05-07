@@ -10,8 +10,8 @@ General configurations for application and development environments.
 
 ### Software Development
 
-- [ ] [Android Studio]()
-- [ ] [Flutter/Dart]()
+- [ ] [Android Studio](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-android-studio/README.md)
+- [ ] [Flutter/Dart](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-flutter/README.md)
 
 
 ## Development
