@@ -13,7 +13,7 @@ pkgs.mkShell {
   ];
 
   APPLICATION = "ollama";
-  VERSION  = "ollama list";
+  VERSION  = "ollama --version";
 
   shellHook = ''
     # Optional: Script environment start up 
