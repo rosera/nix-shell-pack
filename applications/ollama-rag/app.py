@@ -42,7 +42,7 @@ print("Without RAG\n")
 before_rag_template = "What is {topic}"
 before_rag_prompt = ChatPromptTemplate.from_template(before_rag_template)
 before_rag_chain = before_rag_prompt | model_local | StrOutputParser()
-print(before_rag_chain.invoke({"topic": "rich rose"}))
+print(before_rag_chain.invoke({"topic": "cloud storage"}))
 
 print("With RAG\n")
 after_rag_template = """Answer the question based only on the following context:
