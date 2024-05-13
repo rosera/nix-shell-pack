@@ -46,14 +46,15 @@ print(before_rag_chain.invoke({"topic": "cloud storage"}))
 
 print("With RAG\n")
 after_rag_template = """Answer the question based only on the following context:
-{context
+{context}
 Question: {question}
 """
+
 after_rag_prompt = ChatPromptTemplate.from_template(after_rag_template)
 after_rag_chain = (
-        {"context": retriever, "question": RunnablePasstghrough()}
+        { "context": retriever, "question": RunnablePassthrough()}
         | after_rag_prompt
         | model_local
         | StrOutputParser()
 )
-print(after_rag_chain.invoke("What is Google Cloud Storage"))
+print(after_rag_chain.invoke("What storage classes are available?"))
