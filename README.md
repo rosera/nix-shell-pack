@@ -11,6 +11,7 @@ General configurations for application and development environments.
 ### Machine Learning 
 
 - [ ] [Ollama](https://github.com/rosera/nix-shell-pack/tree/main/applications/ollama/README.md)
+- [ ] [Ollama Retrieval Augmented Generation (RAG) demo](https://github.com/rosera/nix-shell-pack/tree/main/applications/ollama-rag/README.md)
 
 ### Software Development
 
