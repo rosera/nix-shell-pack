@@ -4,8 +4,8 @@ pkgs.mkShell {
   name = "docker-app";
 
   nativeBuildInputs = with pkgs; [
-    docker_25
-    nixVersions.nix_2_21
+    docker_20_10
+    nixVersions.nix_2_19
     vim
   ];
 
