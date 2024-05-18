@@ -2,7 +2,6 @@
 
 Initialise a build environment using a Google Cloud Engine virtual instance.
 
-
 Nix Shell Script:
 
 ```nix
@@ -13,9 +12,7 @@ pkgs.mkShell {
 
   nativeBuildInputs = with pkgs; [
    ruby_3_2 
-   rubyPackages_3_2.rspec-core
    gemstash
-   # gcloud-cloud-sdk
    vim
   ];
 
@@ -24,12 +21,11 @@ pkgs.mkShell {
 
   shellHook = ''
     # Optional: Script environment start up 
-    ## Note: Outside of a Google Project - need to authenticate
-    # gcloud auth login
-    # gcloud auth application-default login
     ## Note: Add required GEMS
     gem install google-cloud-storage
     gem install pp 
+    gem install minitest 
+    gem install mocha 
     echo "Welcome to $LANGUAGE Development Environment"
     $VERSION
   '';
