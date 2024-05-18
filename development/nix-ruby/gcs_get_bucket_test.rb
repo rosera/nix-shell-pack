@@ -13,11 +13,11 @@ class GetBucketTest < Minitest::Test
 
   def test_gcs_bucket_exists
     result = gcs_bucket_exists?() 
-    output = StringIO.new
-    $stdout = output
-    $stdout = STDOUT
-    output_string = output.string.strip
-    puts "\n-- Actual Output --\n#{output_string}"
+    # output = StringIO.new
+    # $stdout = output
+    # $stdout = STDOUT
+    # output_string = output.string.strip
+    # puts "\n-- Actual Output --\n#{output_string}"
 
     assert(result, "Bucket #{BUCKET_NAME} should exist")  
   end
