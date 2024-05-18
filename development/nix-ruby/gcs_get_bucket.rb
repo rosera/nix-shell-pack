@@ -1,17 +1,20 @@
-require "google/cloud/storage"
-require "pp"  # Load the 'pretty print' module
+require "google/cloud/storage"     # Load Google Cloud Storage module
+require "pp"                       # Load the 'pretty print' module
 
-storage = Google::Cloud::Storage.new
-bucket_name = "qwiklabs-gcp-04-e89b9bea5f22-bucket" 
 
-bucket = storage.bucket bucket_name
-if bucket
-  puts "Bucket found: #{bucket.name}"
-  # bucket_data = bucket.to_gapi  # Convert to Google API Client format
+## BUCKET_NAME = "BUCKET_AVAILABLE" 
+BUCKET_NAME = "BUCKET_UNAVAILABLE" 
 
+def gcs_bucket_exists?(bucket_name = BUCKET_NAME)
+  storage = Google::Cloud::Storage.new
+  bucket = storage.bucket(BUCKET_NAME)
+  bucket.nil? ? false: true
+end
+
+if gcs_bucket_exists? 
+  puts "Bucket #{BUCKET_NAME} found."
   # Print a nicely formatted representation of the response
-  # pp bucket_data
-  pp bucket
+  ## pp bucket
 else
-  puts "Bucket not found."
+    puts "Bucket #{BUCKET_NAME} not found."
 end
