@@ -1,7 +1,8 @@
 with import <nixpkgs> {};
 
 pkgs.mkShell {
-  name = "python-study-group";
+  name = "python-ollama-rag";
+  description = "Python Ollama + RAG demo";
 
   nativeBuildInputs = with pkgs; [
     git        # For version control (if needed)
