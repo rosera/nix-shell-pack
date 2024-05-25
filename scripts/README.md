@@ -1,8 +1,16 @@
 # Scripts
 
-## Nix Unattended Install 
+## Nix: General Install
 
-Reference: [Link](https://discourse.nixos.org/t/how-to-run-the-nix-installer-silently-from-a-shell-script/25633)
+Multi-plaform instructions for Nix installation
+
+* [Install Nix](https://nix.dev/install-nix)
+
+## Nix: Unattended Install 
+
+Additional script to perform the above:
+
+* Reference: [Link](https://discourse.nixos.org/t/how-to-run-the-nix-installer-silently-from-a-shell-script/25633)
 
 
 ```bash
