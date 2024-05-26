@@ -9,6 +9,7 @@ pkgs.mkShell {
     dbus
     # firefox-unwrapped
     python311
+    python311Packages.dbus-next
     python311Packages.pip
     # python311Packages.glad2
     python311Packages.tkinter
