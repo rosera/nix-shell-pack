@@ -6,7 +6,7 @@ General configurations for application and development environments.
 
 ### Image Processing
 
-- [ ] [Imagemagick](https://github.com/rosera/nix-shell-pack/tree/main/applications/imagemagick/README.md)
+- [ ] [Imagemagick](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-imagemagick/README.md)
 
 ### Machine Learning 
 
