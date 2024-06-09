@@ -27,3 +27,4 @@ General configurations for application and development environments.
 - [ ] [Nodejs](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-nodejs/README.md)
 - [ ] [Python](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python/README.md)
 - [ ] [Ruby](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-ruby/README.md)
+- [ ] [Docker](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-docker/README.md)
