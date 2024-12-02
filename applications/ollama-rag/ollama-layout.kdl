@@ -1,7 +1,7 @@
 layout {
 
-   tab {
-     pane {
+   tab name="ML Server" {
+     pane split_direction="horizontal" size="80%" {
        name "Ollama Server"
        command "ollama"
        args "serve"
@@ -11,13 +11,16 @@ layout {
      }
    }
 
-   tab {
-     pane {
+   tab name="ML Input" {
+     pane split_direction="horizontal" size="80%" {
        name "Ollama UI"
        command "ollama"
        args "run" "gemma2:2b"
        start_suspended true
        focus true 
+     }
+     pane {
+       name "Ollama Model"
      }
    }	
 }
