@@ -1,0 +1,23 @@
+layout {
+
+   tab {
+     pane {
+       name "Ollama Server"
+       command "ollama"
+       args "serve"
+     }
+     pane {
+       name "Terminal"
+     }
+   }
+
+   tab {
+     pane {
+       name "Ollama UI"
+       command "ollama"
+       args "run" "gemma2:2b"
+       start_suspended true
+       focus true 
+     }
+   }	
+}

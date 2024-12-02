@@ -5,6 +5,7 @@ pkgs.mkShell {
   description = "Python Ollama + RAG demo";
 
   nativeBuildInputs = with pkgs; [
+    chroma
     git        # For version control (if needed)
     ollama
     python311Full   
@@ -13,7 +14,7 @@ pkgs.mkShell {
     python311Packages.langchain
     python311Packages.pytest
     python311Packages.boto3
-    python311Packages.chromadb  # unstable channel
+#    python311Packages.chromadb  # unstable channel
     python311Packages.venvShellHook
     python311Packages.pipx
     python311Packages.beautifulsoup4
@@ -32,5 +33,6 @@ pkgs.mkShell {
     source .venv/bin/activate
     echo "Welcome to $LANGUAGE Development Environment"
     $VERSION
+    zellij --layout ollama-layout.kdl
   '';
 }

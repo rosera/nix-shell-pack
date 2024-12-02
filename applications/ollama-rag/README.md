@@ -2,6 +2,22 @@
 
 Based on the Video [Ollama Embedding: How to Feed Data to AI for Better Response?](https://www.youtube.com/watch?v=jENqvjpkwmw)
 
+Setups up a [Zellij window layout](https://zellij.dev/documentation/creating-a-layout) running Ollama 
+
+## Usage
+
+```bash
+nix-shell --pure
+```
+
+In the terminal pull the required model e.g.:
+
+Use <ALT> Direction to move between tabs in Zellij
+
+```
+ollama pull gemma2:2b
+```
+
 ## Requirements
 
 Ollama
@@ -11,6 +27,7 @@ Models:
 - [ ] nomic-embed-text
 - [ ] mistral
 - [ ] gemma
+- [ ] gemma2b
 
 
 ### Ollama Serve
