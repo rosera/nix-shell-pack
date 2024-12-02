@@ -1,5 +1,14 @@
 # Ollama 
 
+Setup an Ollama environment on a device.
+
+## Usage
+
+```bash
+nix-shell --pure
+```
+
+## Configuration
 Nix Shell Script:
 
 ```nix

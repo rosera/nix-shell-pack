@@ -11,11 +11,11 @@ pkgs.mkShell {
   ];
 
   APPLICATION = "Ollama";
-  VERSION  = "ollama --version";
+  # VERSION  = "ollama --version";
 
   shellHook = ''
     # Optional: Script environment start up 
     echo "Welcome to $APPLICATION Environment"
-    $VERSION
+    zellij action new-tab --layout ollama-layout-file.kdl
   '';
 }
