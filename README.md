@@ -4,6 +4,11 @@ General configurations for application and development environments.
 
 ## Applications
 
+
+### Container Orchestration
+
+- [ ] [Minikube](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-minikube/README.md)
+
 ### Image Processing
 
 - [ ] [Imagemagick](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-imagemagick/README.md)
@@ -26,4 +31,5 @@ General configurations for application and development environments.
 - [ ] [Go](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-go/README.md)
 - [ ] [Nodejs](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-nodejs/README.md)
 - [ ] [Python](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python/README.md)
+- [ ] [Python Shell](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python-shell/README.md)
 - [ ] [Ruby](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-ruby/README.md)
