@@ -4,10 +4,13 @@ pkgs.mkShell {
   name = "firebase-dev";
 
   nativeBuildInputs = with pkgs; [
+    cacert        # Support certificates
+    firebase-tools
+    git
     nodejs_20
     nodePackages_latest.webpack
-    firebase-tools
-    cacert        # Support certificates
+    vim
+    zellij
   ];
 
   LANGUAGE     = "Firebase";
@@ -17,5 +20,7 @@ pkgs.mkShell {
     # Optional: Script environment start up 
     echo "Welcome to $LANGUAGE Development Environment"
     $VERSION
+    # Set a layout using Zellij
+    zellij --layout layout.kdl
   '';
 }
