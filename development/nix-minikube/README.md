@@ -1,4 +1,10 @@
 # Minikube 
+## Config
+
+```bash
+minikube start --driver qemu --network socket_vmnet
+```
+
 
 Nix Shell Script:
 
