@@ -19,6 +19,7 @@ pkgs.mkShell {
     export PATH=$PATH:$HOME/$APP_PATH
     ## Note: Add required GEMS
     gem install google-cloud-storage
+    gem install google-iam-v1
     gem install pp 
     gem install minitest 
     gem install mocha 
