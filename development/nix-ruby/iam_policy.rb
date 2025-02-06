@@ -1,19 +1,26 @@
-# require 'google/cloud/core' # This is essential
 require 'google/iam/v1'
 
 
 def get_iam_policy(resource) # Resource is the resource path
 
   # Create a client object. The client can be reused for multiple calls.
+  #puts "Resource: #{resource}"
   iam_client = Google::Iam::V1::IAMPolicy::Client.new
-  request    = Google::Iam::V1::GetIamPolicyRequest.new(resource: resource)
-  puts "Request: #{request}"
+  # request    = Google::Iam::V1::GetIamPolicyRequest.new(resource: resource)
+  # request    = Google::Iam::V1::GetIamPolicyRequest.new(resource: "projects/qwiklabs-gcp-01-ca13e99aed4e")
+  # Create a request. To set request fields, pass in keyword arguments.
+  # request    = Google::Iam::V1::GetIamPolicyRequest.new
+  #puts "Request: #{request}"
 
 
   begin
-    policy = iam_client.get_iam_policy(request)
+    # policy = iam_client.get_iam_policy(resource:  "projects/qwiklabs-gcp-01-ca13e99aed4e", options: nil)
+    policy = iam_client.get_iam_policy(resource:  nil, options: nil)
+    # policy = iam_client.get_iam_policy(request)
+    # policy = get_iam_policy(request)
+    # puts "Policy: #{policy}"
     puts "IAM Policy for #{resource}:"
-    puts " Bindings:"
+    # puts " Bindings:"
     policy.bindings.each do |binding|
     puts " Role: #{binding.role}"
     puts " Members: #{binding.members.join(', ')}"
