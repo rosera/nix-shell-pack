@@ -27,7 +27,7 @@ Models:
 - [ ] nomic-embed-text
 - [ ] mistral
 - [ ] gemma
-- [ ] gemma2b
+- [ ] gemma2:2b
 
 
 ### Ollama Serve
@@ -49,6 +49,7 @@ ollama pull mistral
 ollama pull nomic-embed-text
 ```
 
+
 ### Python application
 
 1. Run python app
@@ -56,6 +57,16 @@ ollama pull nomic-embed-text
 python app.py
 ``` 
 
+## Curl
+
+Use `curl` command to interact with the gemma2 model via an endpoint
+
+```bash
+curl -X POST http://localhost:11434/api/chat -H "Content-Type: application/json" -d '{
+  "model": "gemma2:2b",
+  "messages": [{"role": "user", "content": "Tell me about Canada."}],
+  "stream": false } }'
+```
 
 ## Nix Shell Script:
 
