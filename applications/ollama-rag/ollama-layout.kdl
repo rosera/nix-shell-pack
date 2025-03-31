@@ -7,7 +7,7 @@ layout {
        args "serve"
      }
      pane {
-       name "Terminal"
+       name "Ollama Terminal"
      }
    }
 
