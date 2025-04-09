@@ -2,6 +2,19 @@
 
 Initialise a build environment using a Google Cloud Engine virtual instance.
 
+## Usage
+
+Use the following to run the default `shell.nix` script.
+
+```
+nix-shell --pure
+```
+
+
+## Script
+
+The following is a basic Ruby environment.
+
 Nix Shell Script:
 
 ```nix
@@ -12,6 +25,7 @@ pkgs.mkShell {
 
   nativeBuildInputs = with pkgs; [
    ruby_3_2 
+   rubyPackages_3_4.rubocop
    gemstash
    vim
   ];
