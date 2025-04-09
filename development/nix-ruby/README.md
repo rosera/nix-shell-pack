@@ -1,5 +1,18 @@
 # Ruby 
 
+Local development environment for Rubdy + Googleapis.
+
+## Run
+
+Start the environnmebt by entering the following command:
+
+```
+nix-shell
+```
+
+
+## Script
+
 Initialise a build environment using a Google Cloud Engine virtual instance.
 
 ## Usage
@@ -40,6 +53,7 @@ pkgs.mkShell {
     export PATH=$PATH:$HOME/$APP_PATH
     ## Note: Add required GEMS
     gem install google-cloud-storage
+    gem install google-iam-v1
     gem install pp 
     gem install minitest 
     gem install mocha 
