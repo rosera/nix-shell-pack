@@ -7,6 +7,14 @@
 - [ ] Google Cloud Project
 - [ ] Nix Development Environment
 
+## Nix Shell
+
+1. Start Nix Shell
+```
+nix-shell --pure
+```
+
+
 ## Nix Script
 
 Nix Shell Script:
@@ -28,6 +36,9 @@ pkgs.mkShell {
     # Optional: Script environment start up 
     echo "Welcome to $LANGUAGE Environment"
     $VERSION
+    python -m venv ./venv
+    source ./venv/bin/activate
+    python -m pip install google-adk
   '';
 }
 ```
