@@ -6,8 +6,8 @@ pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     ollama 
     # haskellPackages.cuda
-    # zellij
-    # vim
+    zellij
+    vim
   ];
 
   APPLICATION = "Ollama";
