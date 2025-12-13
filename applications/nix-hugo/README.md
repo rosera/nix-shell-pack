@@ -35,7 +35,7 @@ pkgs.mkShell {
   ];
 
   LANGUAGE     = "Hugo";
-  VERSION      = "hugo --version";
+  VERSION      = "hugo version";
 
   shellHook = ''
     # Optional: Script environment start up 
