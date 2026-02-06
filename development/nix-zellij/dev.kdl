@@ -1,0 +1,18 @@
+layout {
+   tab name="Zellij Dev" focus=true {
+     pane split_direction="vertical" {
+       pane {
+         name "Terminal#1"
+       }
+       pane split_direction="horizontal" {
+         pane {
+           name "Termina#2"
+         }
+         pane  {
+           name "Terminal#3"
+         }
+       }
+     }
+   }
+
+}
