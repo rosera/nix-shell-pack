@@ -11,3 +11,5 @@ General configurations for application and development environments.
 - [ ] [Python](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python/README.md)
 - [ ] [Python Shell](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python-shell/README.md)
 - [ ] [Ruby](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-ruby/README.md)
+- [ ] [Tmux](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-tmux/README.md)
+- [ ] [Zellij](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-zellij/README.md)
