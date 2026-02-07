@@ -1,0 +1,12 @@
+layout {
+
+   tab name="Firebase Code" {
+     pane split_direction="horizontal" size="80%" {
+       name "Code"
+       focus true 
+     }
+     pane {
+       name "Terminal"
+     }
+   }
+}
