@@ -1,5 +1,7 @@
 # Ollama 
 
+Local development environment for Ollama RAG.
+
 Based on the Video [Ollama Embedding: How to Feed Data to AI for Better Response?](https://www.youtube.com/watch?v=jENqvjpkwmw)
 
 Setups up a [Zellij window layout](https://zellij.dev/documentation/creating-a-layout) running Ollama 
@@ -69,6 +71,10 @@ curl -X POST http://localhost:11434/api/chat -H "Content-Type: application/json"
 ```
 
 ## Nix Shell Script:
+
+The following is a basic environment.
+
+Nix Shell Script:
 
 ```nix
 with import <nixpkgs> {};

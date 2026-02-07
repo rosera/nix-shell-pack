@@ -1,6 +1,28 @@
 # Android Studio
 
-Nix Shell Script
+Local development environment for Android Studio.
+
+## Run
+
+Start the environment by entering the following command:
+
+```
+nix-shell
+```
+
+## Usage
+
+Use the following to run the default `shell.nix` script.
+
+```
+nix-shell --pure
+```
+
+## Script
+
+The following is a basic environment.
+
+Nix Shell Script:
 
 ```nix
 with (import <nixpkgs> { config = { LIBGL_ALWAYS_SOFTWARE=1; android_sdk.accept_license = true; allowUnfree = true; }; });

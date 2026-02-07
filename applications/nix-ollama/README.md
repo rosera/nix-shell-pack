@@ -1,6 +1,14 @@
 # Ollama 
 
-Setup an Ollama environment on a device.
+Local development environment for Ollama.
+
+## Run
+
+Start the environment by entering the following command:
+
+```
+nix-shell
+```
 
 ## Usage
 
@@ -9,6 +17,9 @@ nix-shell --pure
 ```
 
 ## Configuration
+
+The following is a basic environment.
+
 Nix Shell Script:
 
 ```nix

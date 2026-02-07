@@ -1,6 +1,6 @@
-# Minikube 
+# Hugo 
 
-Local development environment for Minikube.
+Local development environment for Hugo.
 
 ## Run
 
@@ -10,22 +10,12 @@ Start the environment by entering the following command:
 nix-shell
 ```
 
-
 ## Usage
 
 Use the following to run the default `shell.nix` script.
 
 ```
 nix-shell --pure
-```
-
-
-## Config
-
-The driver needs to be set to the machine specific configuration:
-
-```bash
-minikube start --driver qemu --network socket_vmnet
 ```
 
 ## Script
@@ -38,19 +28,18 @@ Nix Shell Script:
 with import <nixpkgs> {};
 
 pkgs.mkShell {
-  name = "minikube-dev";
+  name = "firebase-dev";
 
   nativeBuildInputs = with pkgs; [
-    minikube 
-    docker
+   hugo 
   ];
 
-  APPLICATION = "Minikube";
-  VERSION  = "minikube version";
+  LANGUAGE     = "Hugo";
+  VERSION      = "hugo version";
 
   shellHook = ''
     # Optional: Script environment start up 
-    echo "Welcome to $APPLICATION Development Environment"
+    echo "Welcome to $LANGUAGE Development Environment"
     $VERSION
   '';
 }

@@ -1,6 +1,6 @@
-# Imagemagick
+# Android Java 
 
-Local development environment for Imagemagick.
+Local development environment for Android + Java.
 
 ## Run
 
@@ -18,6 +18,7 @@ Use the following to run the default `shell.nix` script.
 nix-shell --pure
 ```
 
+
 ## Script
 
 The following is a basic environment.
@@ -28,18 +29,19 @@ Nix Shell Script:
 with import <nixpkgs> {};
 
 pkgs.mkShell {
-  name = "imagickmagick-app";
+  name = "python-dev";
 
   nativeBuildInputs = with pkgs; [
-    imagemagick 
+    javaPackages.compiler.temurin-bin.jdk-21
+    android-tools
   ];
 
-  APPLICATION = "Imagemagick";
-  VERSION  = "convert -version";
+  LANGUAGE = "Android Java";
+  VERSION  = "java --version";
 
   shellHook = ''
-    # Optional: Script environment start up 
-    echo "Welcome to $APPLICATION Environment"
+    # Optional: Script environment start up
+    echo "Welcome to $LANGUAGE Development Environment"
     $VERSION
   '';
 }

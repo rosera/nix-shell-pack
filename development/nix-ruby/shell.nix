@@ -5,6 +5,7 @@ pkgs.mkShell {
 
   nativeBuildInputs = with pkgs; [
    ruby_3_2 
+   rubyPackages_3_4.rubocop
    gemstash
    vim
   ];

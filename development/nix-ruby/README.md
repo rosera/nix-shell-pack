@@ -1,10 +1,10 @@
 # Ruby 
 
-Local development environment for Rubdy + Googleapis.
+Local development environment for Ruby + Googleapis.
 
 ## Run
 
-Start the environnmebt by entering the following command:
+Start the environment by entering the following command:
 
 ```
 nix-shell
@@ -14,6 +14,19 @@ nix-shell
 ## Script
 
 Initialise a build environment using a Google Cloud Engine virtual instance.
+
+## Usage
+
+Use the following to run the default `shell.nix` script.
+
+```
+nix-shell --pure
+```
+
+
+## Script
+
+The following is a basic environment.
 
 Nix Shell Script:
 
@@ -25,6 +38,7 @@ pkgs.mkShell {
 
   nativeBuildInputs = with pkgs; [
    ruby_3_2 
+   rubyPackages_3_4.rubocop
    gemstash
    vim
   ];
