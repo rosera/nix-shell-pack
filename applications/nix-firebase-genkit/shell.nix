@@ -1,5 +1,12 @@
 with import <nixpkgs> {};
 
+let
+  # External Script: This reads './dev.kdl' and puts it into a binary named 'dev-zellij'
+  scriptZellijLayout = pkgs.writeText "dev.kdl" (builtins.readFile ./dev.kdl);
+  zellijLayout = pkgs.writeShellScriptBin "dev-zellij" ''
+    ${pkgs.zellij}/bin/zellij --layout ${scriptZellijLayout}
+  '';
+in
 pkgs.mkShell {
   name = "firebase-dev";
 
@@ -12,6 +19,7 @@ pkgs.mkShell {
     ollama                         # ollam support
     vim                            # vim support
     zellij                         # zellij support
+    zellijLayout                   # zellij layout definition
   ];
 
   LANGUAGE     = "Firebase Genkit";
@@ -31,6 +39,7 @@ pkgs.mkShell {
     npm i genkit
 
     # Set a layout using Zellij
-    zellij --layout layout.kdl
+    # zellij --layout layout.kdl
+    dev-zellij
   '';
 }

@@ -8,6 +8,7 @@
     "wepack-cli": "^0.0.1-security"
   },
   "dependencies": {
-    "genkitx-ollama": "^1.4.0"
+    "genkit": "^1.28.0",
+    "genkitx-ollama": "^1.28.0"
   }
 }
