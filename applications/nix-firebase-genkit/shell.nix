@@ -40,6 +40,6 @@ pkgs.mkShell {
 
     # Set a layout using Zellij
     # zellij --layout layout.kdl
-    dev-zellij
+    exec dev-zellij
   '';
 }
