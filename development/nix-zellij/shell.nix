@@ -11,6 +11,7 @@ pkgs.mkShell {
 
   name = "zellij-dev";
   nativeBuildInputs = with pkgs; [
+    go
     zellij
     zellijLayout
   ];

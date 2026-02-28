@@ -25,6 +25,6 @@ pkgs.mkShell {
     trap "tmux kill-session -t go-dev" EXIT
 
     # Perform Tmux Dev Layout
-    dev-tmux
+    exec dev-tmux
   '';
 }
