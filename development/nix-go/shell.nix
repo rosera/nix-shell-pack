@@ -15,6 +15,7 @@ pkgs.mkShell {
 
   LANGUAGE = "Go";
   VERSION  = "go version";
+  SESSION  = "go-dev";
 
   shellHook = ''
     # Optional: Script environment start up
@@ -26,6 +27,6 @@ pkgs.mkShell {
     trap "tmux kill-session -t go-dev" EXIT
 
     # Perform Tmux Dev Layout
-    exec dev-tmux
+    exec dev-tmux $SESSION
   '';
 }
