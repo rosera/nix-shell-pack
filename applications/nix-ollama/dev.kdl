@@ -16,7 +16,8 @@ layout {
 
          pane command="ollama" {
            name "Ollama Server"
-           args "run" "llama3.2"
+           /* args "run" "llama3.2" */
+           args "run" "gemma3:latest"
            start_suspended true
          }
 
