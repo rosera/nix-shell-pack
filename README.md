@@ -23,6 +23,7 @@ General configuration for LLM based environments.
 * [Ollama](https://github.com/rosera/nix-shell-pack/tree/main/applications/ollama/README.md) - Local LLM runner.
 * [Ollama Retrieval Augmented Generation (RAG) demo](https://github.com/rosera/nix-shell-pack/tree/main/applications/ollama-rag/README.md) - Retrieval Augmented Generation example.
 
+
 ### Mobile & Web Development
 
 General configuration for web and mobile environments.

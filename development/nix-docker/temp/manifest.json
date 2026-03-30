@@ -1,0 +1,11 @@
+[
+  {
+    "RepoTags": [
+      "hello-world:latest"
+    ],
+    "Layers": [
+      "35124cccb8652d3bebf54c580fb32b2f0695e5997567b0e09656b93665e9400b/layer.tar"
+    ],
+    "Config": "2b3487d46a7cbd4ba07871bd5e6be11b9be7d7afb3726ad34b037008e1627343.json"
+  }
+]

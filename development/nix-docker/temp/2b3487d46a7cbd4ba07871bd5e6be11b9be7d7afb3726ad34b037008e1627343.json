@@ -1,0 +1,26 @@
+{
+  "architecture": "arm64",
+  "config": {
+    "Cmd": [
+      "Hello World!"
+    ],
+    "Entrypoint": [
+      "echo"
+    ],
+    "Env": []
+  },
+  "created": "1970-01-01T00:00:01Z",
+  "os": "linux",
+  "preferLocalBuild": true,
+  "rootfs": {
+    "diff_ids": [
+      "sha256:036da2c77b9e52292fc0e1d3855b126c8234ef22c64b8d4274c048a26c65405c"
+    ],
+    "type": "layers"
+  },
+  "history": [
+    {
+      "created": "1970-01-01T00:00:01Z"
+    }
+  ]
+}

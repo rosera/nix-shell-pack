@@ -1,0 +1,17 @@
+{
+ "architecture": "arm64",
+ "config": {
+  "Cmd": [
+   "Hello World!"
+  ],
+  "Entrypoint": [
+   "echo"
+  ]
+ },
+ "created": "1970-01-01T00:00:01Z",
+ "os": "linux",
+ "preferLocalBuild": true,
+ "checksum": "tarsum.v1+sha256:ca508b78a062e76afc63d62aa53d04124ef200d3ab13ad7060c193b09807212d",
+ "id": "35124cccb8652d3bebf54c580fb32b2f0695e5997567b0e09656b93665e9400b",
+ "Size": 5478400
+}
