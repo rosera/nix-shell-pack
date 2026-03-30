@@ -1,0 +1,86 @@
+@page {
+  margin: 2cm;
+}
+
+html {
+  font-size: 10pt;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #24292e;
+  background-color: #f5f5f5;
+  padding: 1rem;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #007bff;
+}
+
+ul, ol {
+  padding-left: 1em;
+}
+
+li {
+  margin-top: 0.25em;
+}
+
+p, li {
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+/* Name */
+
+h1 {
+  color: #333;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  border-bottom: 4px solid #ddd;
+}
+
+/* Main sections */
+
+h2 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Job titles */
+
+h3 {
+  color: #333;
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+/* Company names */
+
+h4 {
+  color: #555;
+  font-size: 1.0rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Other job titles */
+
+h5 {
+  color: #555;
+  font-size: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
