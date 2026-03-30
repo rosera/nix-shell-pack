@@ -48,10 +48,10 @@ Language Config Path
 
 | Script | Description | Language
 | :--- | :--- | :----
-| [Go](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-go/README.md) | development/nix-go | | ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+| [Go](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-go/README.md) | development/nix-go | ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
 | [Nodejs](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-nodejs/README.md) | development/nix-nodejs | ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
-| [Python](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python/README.md) | development/nix-python | ![Nix](https://img.shields.io/badge/Nix-5277C3?style=for-the-badge&logo=nixos&logoColor=white)
-| [Python Shell](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python-shell/README.md) | development/nix-python-shell | ![Nix](https://img.shields.io/badge/Nix-5277C3?style=for-the-badge&logo=nixos&logoColor=white)
+| [Python](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python/README.md) | development/nix-python | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
+| [Python Shell](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python-shell/README.md) | development/nix-python-shell | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
 | [Ruby](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-ruby/README.md) | development/nix-ruby | ![Nix](https://img.shields.io/badge/ruby-5277C3?style=for-the-badge&logo=ruby&logoColor=white)
 
 ### Terminal & Workflow
