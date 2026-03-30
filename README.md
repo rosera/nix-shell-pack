@@ -3,7 +3,6 @@
 A curated collection of Nix configurations for reproducible application environments and development shells.
 
 ## 🚀 Quick Start
----
 
 To use any of these configurations, ensure you have [Nix](https://nixos.org/download.html) installed. You can run these shells directly via the GitHub URL (if using Flakes) or by cloning and running:
 
@@ -12,7 +11,6 @@ nix-shell <path-to-directory>/shell.nix
 ```
 
 ## 🛠 Applications
----
 
 Ready-to-use environments for specific software tools.
 
