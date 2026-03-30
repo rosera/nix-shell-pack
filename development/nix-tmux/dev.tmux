@@ -2,7 +2,12 @@
 
 # DEFAULT_PORT
 DEFAULT_PORT=8080
-SHELL="zsh"
+# Detect if we are on a Mac
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  SHELL_CMD="zsh"
+else
+  SHELL_CMD="bash"
+fi
 
 # Generate random Docker-like name
 generate_session_name() {
@@ -22,9 +27,12 @@ tmux has-session -t "$SESSION" 2>/dev/null
 
 # Create new sessions [Optional: ZSH default shell]
 if [ $? != 0 ]; then
-  tmux new-session -d -s "$SESSION" ${SHELL}
-  tmux split-window -h -t "$SESSION" ${SHELL}
-  tmux split-window -v -t "$SESSION" ${SHELL}
+  tmux new-session -d -s "$SESSION" "$SHELL_CMD"
+  tmux split-window -h -t "$SESSION" "$SHELL_CMD"
+  tmux split-window -v -t "$SESSION" "$SHELL_CMD"
+
+  # Optional: Send terminal command to a pane if needed
+  # tmux send-keys -t "$SESSION":0.0 "ls" C-m
 
   tmux send-keys -t "$SESSION":0
 fi
