@@ -1,6 +1,6 @@
-# NodeJS 
+# Minikube 
 
-Local development environment for NodeJS.
+Local development environment for Minikube.
 
 ## Run
 
@@ -10,12 +10,22 @@ Start the environment by entering the following command:
 nix-shell
 ```
 
+
 ## Usage
 
 Use the following to run the default `shell.nix` script.
 
 ```
 nix-shell --pure
+```
+
+
+## Config
+
+The driver needs to be set to the machine specific configuration:
+
+```bash
+minikube start --driver qemu --network socket_vmnet
 ```
 
 ## Script
@@ -28,18 +38,19 @@ Nix Shell Script:
 with import <nixpkgs> {};
 
 pkgs.mkShell {
-  name = "nodejs-dev";
+  name = "minikube-dev";
 
   nativeBuildInputs = with pkgs; [
-    nodejs_20
+    minikube 
+    docker
   ];
 
-  LANGUAGE = "NodeJS";
-  VERSION  = "node --version";
+  APPLICATION = "Minikube";
+  VERSION  = "minikube version";
 
   shellHook = ''
     # Optional: Script environment start up 
-    echo "Welcome to $LANGUAGE Development Environment"
+    echo "Welcome to $APPLICATION Development Environment"
     $VERSION
   '';
 }

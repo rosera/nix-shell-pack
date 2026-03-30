@@ -1,19 +1,16 @@
-# Ollama 
-
-Nix Shell Script:
-
-```nix
 with import <nixpkgs> {};
 
 pkgs.mkShell {
-  name = "ollama-app";
+  name = "docker-app";
 
   nativeBuildInputs = with pkgs; [
-    ollama 
+    docker_20_10
+    nixVersions.nix_2_19
+    vim
   ];
 
-  APPLICATION = "ollama";
-  VERSION  = "ollama --version";
+  APPLICATION = "Docker";
+  VERSION  = "docker --version";
 
   shellHook = ''
     # Optional: Script environment start up 
@@ -21,4 +18,3 @@ pkgs.mkShell {
     $VERSION
   '';
 }
-```

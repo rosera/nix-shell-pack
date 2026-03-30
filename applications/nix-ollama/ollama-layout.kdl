@@ -1,0 +1,28 @@
+layout {
+
+   tab name="Ollama" focus=true {
+
+     pane split_direction="vertical" {
+       pane {
+         name "Terminal"
+       }
+
+       pane split_direction="horizontal" {
+
+         pane command="ollama" {
+           name "Ollama Server"
+           args "serve"
+         }
+
+         pane command="ollama" {
+           name "Ollama Server"
+           args "run" "gemma2:2b"
+           start_suspended true
+         }
+
+       }
+
+     }
+   }
+
+}

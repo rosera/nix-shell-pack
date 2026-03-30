@@ -1,6 +1,6 @@
-# NodeJS 
+# Hugo 
 
-Local development environment for NodeJS.
+Local development environment for Hugo.
 
 ## Run
 
@@ -28,14 +28,14 @@ Nix Shell Script:
 with import <nixpkgs> {};
 
 pkgs.mkShell {
-  name = "nodejs-dev";
+  name = "firebase-dev";
 
   nativeBuildInputs = with pkgs; [
-    nodejs_20
+   hugo 
   ];
 
-  LANGUAGE = "NodeJS";
-  VERSION  = "node --version";
+  LANGUAGE     = "Hugo";
+  VERSION      = "hugo version";
 
   shellHook = ''
     # Optional: Script environment start up 

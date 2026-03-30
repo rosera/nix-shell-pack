@@ -1,6 +1,32 @@
 # Ruby 
 
+Local development environment for Ruby + Googleapis.
+
+## Run
+
+Start the environment by entering the following command:
+
+```
+nix-shell
+```
+
+
+## Script
+
 Initialise a build environment using a Google Cloud Engine virtual instance.
+
+## Usage
+
+Use the following to run the default `shell.nix` script.
+
+```
+nix-shell --pure
+```
+
+
+## Script
+
+The following is a basic environment.
 
 Nix Shell Script:
 
@@ -12,6 +38,7 @@ pkgs.mkShell {
 
   nativeBuildInputs = with pkgs; [
    ruby_3_2 
+   rubyPackages_3_4.rubocop
    gemstash
    vim
   ];
@@ -26,6 +53,7 @@ pkgs.mkShell {
     export PATH=$PATH:$HOME/$APP_PATH
     ## Note: Add required GEMS
     gem install google-cloud-storage
+    gem install google-iam-v1
     gem install pp 
     gem install minitest 
     gem install mocha 

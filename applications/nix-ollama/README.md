@@ -1,6 +1,6 @@
-# NodeJS 
+# Ollama 
 
-Local development environment for NodeJS.
+Local development environment for Ollama.
 
 ## Run
 
@@ -12,13 +12,11 @@ nix-shell
 
 ## Usage
 
-Use the following to run the default `shell.nix` script.
-
-```
+```bash
 nix-shell --pure
 ```
 
-## Script
+## Configuration
 
 The following is a basic environment.
 
@@ -28,18 +26,18 @@ Nix Shell Script:
 with import <nixpkgs> {};
 
 pkgs.mkShell {
-  name = "nodejs-dev";
+  name = "ollama-app";
 
   nativeBuildInputs = with pkgs; [
-    nodejs_20
+    ollama 
   ];
 
-  LANGUAGE = "NodeJS";
-  VERSION  = "node --version";
+  APPLICATION = "ollama";
+  VERSION  = "ollama --version";
 
   shellHook = ''
     # Optional: Script environment start up 
-    echo "Welcome to $LANGUAGE Development Environment"
+    echo "Welcome to $APPLICATION Environment"
     $VERSION
   '';
 }

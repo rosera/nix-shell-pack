@@ -1,6 +1,6 @@
-# NodeJS 
+# Android Java 
 
-Local development environment for NodeJS.
+Local development environment for Android + Java.
 
 ## Run
 
@@ -18,6 +18,7 @@ Use the following to run the default `shell.nix` script.
 nix-shell --pure
 ```
 
+
 ## Script
 
 The following is a basic environment.
@@ -28,17 +29,18 @@ Nix Shell Script:
 with import <nixpkgs> {};
 
 pkgs.mkShell {
-  name = "nodejs-dev";
+  name = "python-dev";
 
   nativeBuildInputs = with pkgs; [
-    nodejs_20
+    javaPackages.compiler.temurin-bin.jdk-21
+    android-tools
   ];
 
-  LANGUAGE = "NodeJS";
-  VERSION  = "node --version";
+  LANGUAGE = "Android Java";
+  VERSION  = "java --version";
 
   shellHook = ''
-    # Optional: Script environment start up 
+    # Optional: Script environment start up
     echo "Welcome to $LANGUAGE Development Environment"
     $VERSION
   '';

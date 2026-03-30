@@ -1,17 +1,19 @@
+# Docker 
+
+Nix Shell Script:
+
+```nix
 with import <nixpkgs> {};
 
 pkgs.mkShell {
-  name = "ollama-app";
+  name = "docker-app";
 
   nativeBuildInputs = with pkgs; [
-    ollama 
-    # haskellPackages.cuda
-    # zellij
-    # vim
+    docker_25 
   ];
 
-  APPLICATION = "Ollama";
-  VERSION  = "ollama --version";
+  APPLICATION = "Docker";
+  VERSION  = "docker --version";
 
   shellHook = ''
     # Optional: Script environment start up 
@@ -19,3 +21,4 @@ pkgs.mkShell {
     $VERSION
   '';
 }
+```

@@ -8,14 +8,12 @@ pkgs.mkShell {
 
   name = "tmux-dev";
   nativeBuildInputs = with pkgs; [
-    go 
     tmux
     tmuxLayout
   ];
 
-  LANGUAGE = "Go";
-  VERSION  = "go version";
-  SESSION  = "go-dev";
+  LANGUAGE = "Tmux";
+  VERSION  = "tmux -V";
 
   shellHook = ''
     # Optional: Script environment start up
@@ -27,6 +25,6 @@ pkgs.mkShell {
     trap "tmux kill-session -t go-dev" EXIT
 
     # Perform Tmux Dev Layout
-    exec dev-tmux $SESSION
+    exec dev-tmux
   '';
 }

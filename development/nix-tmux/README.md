@@ -1,6 +1,6 @@
-# Go 
+# Tmux 
 
-Local development environment for Go.
+Local development environment for Tmux.
 
 ## Run
 
@@ -22,10 +22,7 @@ nix-shell --pure
 
 The following is a basic environment.
 
-- [x] shell.nix
-- [x] dev.tmux
-
-### nix.shell:
+Nix Shell Script:
 
 ```nix
 with import <nixpkgs> {};
@@ -38,14 +35,12 @@ pkgs.mkShell {
 
   name = "tmux-dev";
   nativeBuildInputs = with pkgs; [
-    go 
     tmux
     tmuxLayout
   ];
 
-  LANGUAGE = "Go";
-  VERSION  = "go version";
-  SESSION  = "go-dev";
+  LANGUAGE = "Tmux";
+  VERSION  = "tmux -V";
 
   shellHook = ''
     # Optional: Script environment start up
@@ -57,38 +52,7 @@ pkgs.mkShell {
     trap "tmux kill-session -t go-dev" EXIT
 
     # Perform Tmux Dev Layout
-    exec dev-tmux $SESSION
+    exec dev-tmux
   '';
 }
-```
-
-
-### dev.tmux
-
-A basic script to access a parameter for the session name.
-If a session name is not provided, it will default to `go-dev`.
-
-
-```bash
-#!/bin/bash
-
-# Use the first argument if provided, otherwise default to "go-dev"
-SESSION=${1:-"go-dev"}
-
-# Check if the session already exists
-tmux has-session -t $SESSION 2>/dev/null
-
-if [ $? != 0 ]; then
-  # Create session, split panes
-  tmux new-session -d -s $SESSION
-  tmux split-window -h -t $SESSION
-  tmux split-window -v -t $SESSION
-fi
-
-# Smart attach: Switch if already inside tmux, otherwise attach
-if [ -z "$TMUX" ]; then
-    tmux attach-session -t "$SESSION"
-else
-    tmux switch-client -t "$SESSION"
-fi
 ```

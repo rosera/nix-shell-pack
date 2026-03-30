@@ -1,6 +1,24 @@
 # Ollama 
 
+Local development environment for Ollama RAG.
+
 Based on the Video [Ollama Embedding: How to Feed Data to AI for Better Response?](https://www.youtube.com/watch?v=jENqvjpkwmw)
+
+Setups up a [Zellij window layout](https://zellij.dev/documentation/creating-a-layout) running Ollama 
+
+## Usage
+
+```bash
+nix-shell --pure
+```
+
+In the terminal pull the required model e.g.:
+
+Use <ALT> Direction to move between tabs in Zellij
+
+```
+ollama pull gemma2:2b
+```
 
 ## Requirements
 
@@ -11,6 +29,7 @@ Models:
 - [ ] nomic-embed-text
 - [ ] mistral
 - [ ] gemma
+- [ ] gemma2:2b
 
 
 ### Ollama Serve
@@ -32,6 +51,7 @@ ollama pull mistral
 ollama pull nomic-embed-text
 ```
 
+
 ### Python application
 
 1. Run python app
@@ -39,8 +59,22 @@ ollama pull nomic-embed-text
 python app.py
 ``` 
 
+## Curl
+
+Use `curl` command to interact with the gemma2 model via an endpoint
+
+```bash
+curl -X POST http://localhost:11434/api/chat -H "Content-Type: application/json" -d '{
+  "model": "gemma2:2b",
+  "messages": [{"role": "user", "content": "Tell me about Canada."}],
+  "stream": false } }'
+```
 
 ## Nix Shell Script:
+
+The following is a basic environment.
+
+Nix Shell Script:
 
 ```nix
 with import <nixpkgs> {};
