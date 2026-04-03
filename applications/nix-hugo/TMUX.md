@@ -1,3 +1,15 @@
+# Tmux 
+
+Add a dev.tmux configuration to use within the Nix configuration.
+Quickly spin up a window environment.
+
+> Ref: [nix-tmux](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-tmux/README.md)
+
+1. Create a `dev.tmux` file
+
+2. Add the following script to this file:
+
+```bash
 #!/usr/bin/env bash
 
 # DEFAULT_PORT
@@ -36,11 +48,12 @@ if [ $? != 0 ]; then
   #
   # Send the hugo command to pane 0
   # Example: C-m at the end simulates pressing "Enter"
-  # tmux send-keys -t $SESSION:0 "until hugo serve -D -p $PORT; do echo 'Command failed. Press Enter to retry...'; read; done" C-m
+  tmux send-keys -t $SESSION:0 "until hugo serve -D -p $PORT; do echo 'Command failed. Press Enter to retry...'; read; done" C-m
 
-  tmux send-keys -t "$SESSION":0
+  # tmux send-keys -t "$SESSION":0
 
 
 fi
 
 tmux attach-session -t "$SESSION"
+```
