@@ -1,5 +1,11 @@
 # Nix Shell Pack ❄️
 
+![Beta](https://img.shields.io/badge/Release%20Status-Beta-red)
+![Tag](https://img.shields.io/github/v/tag/rosera/nix-shell-pack?label=Tag)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE)
+![Nix](https://img.shields.io/badge/NixOS-Shell-blue)
+![Platforms](https://img.shields.io/badge/Platform-Linux%20%7C%20MacOS-green)
+
 A curated collection of Nix configurations for reproducible application environments and development shells.
 
 ![Nix](https://img.shields.io/badge/Nix-5277C3?style=for-the-badge&logo=nixos&logoColor=white)
