@@ -26,8 +26,10 @@ Ready-to-use environments for specific software tools.
 
 General configuration for LLM based environments.
 
-* [Ollama](https://github.com/rosera/nix-shell-pack/tree/main/applications/ollama/README.md) - Local LLM runner.
-* [Ollama Retrieval Augmented Generation (RAG) demo](https://github.com/rosera/nix-shell-pack/tree/main/applications/ollama-rag/README.md) - Retrieval Augmented Generation example.
+* [Gemini CLI](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-gemini-cli/README.md) - Local LLM runner.
+* [Claude Code with Ollama](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-claude-code/README.md) - Retrieval Augmented Generation example.
+* [Ollama Local Mode](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-ollama/README.md) - Custom Ollama Local.
+* [Ollama Retrieval Augmented Generation (RAG) demo](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-ollama-rag/README.md) - Retrieval Augmented Generation example.
 
 
 ### Mobile & Web Development
@@ -42,6 +44,7 @@ General configuration for web and mobile environments.
 
 General configuration for utilities and tooling.
 
+* [Hugo](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-hugo/README.md) - Static Site Blogging.
 * [Imagemagick](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-imagemagick/README.md) - CLI image manipulation.
 * [Minikube](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-minikube/README.md) - Local Kubernetes orchestration.
 
