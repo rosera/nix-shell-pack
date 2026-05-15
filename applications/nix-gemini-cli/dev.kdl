@@ -1,0 +1,40 @@
+layout {
+
+   tab name="Gemini" focus=true {
+
+     pane split_direction="horizontal" {
+
+       // Launch GEMINI CLI HERE!
+       pane command="gemini" {
+         name "Gemini CLI"
+         args "--model" "gemini-3.1-flash-lite-preview"
+         start_suspended true
+         borderless true
+       }
+
+       pane size=1 borderless=true {
+        // plugin location="zellij:compact-bar"
+        plugin location="zellij:tab-bar"
+       }
+
+     }
+   }
+
+   tab name="Terminal" {
+
+     // TERMINAL for commands
+     pane split_direction="horizontal" {
+
+        pane {
+          name "Terminal"
+        }
+
+        pane size=1 borderless=true {
+         // plugin location="zellij:compact-bar"
+         plugin location="zellij:tab-bar"
+        }
+
+      }
+   }
+
+}
