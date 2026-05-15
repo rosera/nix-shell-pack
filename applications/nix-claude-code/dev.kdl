@@ -1,0 +1,50 @@
+layout {
+
+   tab name="Claude" {
+
+     pane split_direction="horizontal" {
+
+       // Launch CLAUDE HERE!
+       pane command="ollama" {
+         name "Claude"
+         args "launch" "claude" "--model" "gemma4:e2b"
+         start_suspended true
+         borderless true
+       }
+
+       pane size=1 borderless=true {
+        // plugin location="zellij:compact-bar"
+        plugin location="zellij:tab-bar"
+       }
+
+     }
+   }
+
+   tab name="Ollama" focus=true {
+
+     pane split_direction="horizontal" {
+
+       pane size="60%" command="ollama" {
+         name "Server"
+         args "serve"
+       }
+
+       pane size="20%" command="ollama" {
+         name "Chat"
+         // Set up MODEL HERE!
+         /* args "run" "llama3.2" */
+         args "run" "gemma4:e2b"
+         start_suspended true
+       }
+
+       pane size=1 borderless=true {
+        // plugin location="zellij:compact-bar"
+        plugin location="zellij:tab-bar"
+       }
+
+     }
+   }
+
+
+
+}
