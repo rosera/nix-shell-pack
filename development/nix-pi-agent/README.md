@@ -1,6 +1,6 @@
-# Tmux 
+# Pi Coding Agent
 
-Local development environment for Tmux.
+Local development environment for Pi using Tmux.
 
 ## Run
 
