@@ -1,0 +1,35 @@
+0 verbose cli /nix/store/zxb9hva3jm88kzw9vx7lg96qjgviy7gr-nodejs-slim-20.20.2/bin/node /nix/store/1yv2ybgqsx9hbzxnbpxa1qjyfl8h8pv6-nodejs-slim-20.20.2-npm/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.20.2
+3 silly config load:file:/nix/store/1yv2ybgqsx9hbzxnbpxa1qjyfl8h8pv6-nodejs-slim-20.20.2-npm/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/rosera/Documents/repos/nix-shell-pack/development/nix-pi-agent/pi-coding-agent/.npmrc
+5 silly config load:file:/Users/rosera/.npmrc
+6 silly config load:file:/Users/rosera/Documents/repos/nix-shell-pack/development/nix-pi-agent/pi-coding-agent/.npm-global/etc/npmrc
+7 verbose title npm exec @earendil-works/pi-coding-agent@0.74.0
+8 verbose argv "exec" "--yes" "--" "@earendil-works/pi-coding-agent@0.74.0"
+9 verbose logfile logs-max:10 dir:/Users/rosera/Documents/repos/nix-shell-pack/development/nix-pi-agent/pi-coding-agent/.npm-cache/_logs/2026-05-17T20_18_52_456Z-
+10 verbose logfile /Users/rosera/Documents/repos/nix-shell-pack/development/nix-pi-agent/pi-coding-agent/.npm-cache/_logs/2026-05-17T20_18_52_456Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 http fetch GET 200 https://registry.npmjs.org/@earendil-works%2fpi-coding-agent 117ms (cache miss)
+14 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+15 verbose stack Error: ENOENT: no such file or directory, lstat '/Users/rosera/Documents/repos/nix-shell-pack/development/nix-pi-agent/pi-coding-agent/.npm-global'
+15 verbose stack     at async lstat (node:internal/fs/promises:1022:18)
+15 verbose stack     at async #loadActual (/nix/store/1yv2ybgqsx9hbzxnbpxa1qjyfl8h8pv6-nodejs-slim-20.20.2-npm/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/load-actual.js:112:20)
+15 verbose stack     at async exec (/nix/store/1yv2ybgqsx9hbzxnbpxa1qjyfl8h8pv6-nodejs-slim-20.20.2-npm/lib/node_modules/npm/node_modules/libnpmexec/lib/index.js:207:26)
+15 verbose stack     at async Npm.exec (/nix/store/1yv2ybgqsx9hbzxnbpxa1qjyfl8h8pv6-nodejs-slim-20.20.2-npm/lib/node_modules/npm/lib/npm.js:207:9)
+15 verbose stack     at async module.exports (/nix/store/1yv2ybgqsx9hbzxnbpxa1qjyfl8h8pv6-nodejs-slim-20.20.2-npm/lib/node_modules/npm/lib/cli/entry.js:74:5)
+16 error code ENOENT
+17 error syscall lstat
+18 error path /Users/rosera/Documents/repos/nix-shell-pack/development/nix-pi-agent/pi-coding-agent/.npm-global
+19 error errno -2
+20 error enoent ENOENT: no such file or directory, lstat '/Users/rosera/Documents/repos/nix-shell-pack/development/nix-pi-agent/pi-coding-agent/.npm-global'
+21 error enoent This is related to npm not being able to find a file.
+21 error enoent
+22 verbose cwd /Users/rosera/Documents/repos/nix-shell-pack/development/nix-pi-agent/pi-coding-agent
+23 verbose os Darwin 25.4.0
+24 verbose node v20.20.2
+25 verbose npm  v10.8.2
+26 verbose exit -2
+27 verbose code -2
+28 error A complete log of this run can be found in: /Users/rosera/Documents/repos/nix-shell-pack/development/nix-pi-agent/pi-coding-agent/.npm-cache/_logs/2026-05-17T20_18_52_456Z-debug-0.log
