@@ -52,6 +52,13 @@ General configuration for utilities and tooling.
 
 Standardized shells for various programming languages and workflows.
 
+### Terminal & Workflow
+
+Standardized window management configuration.
+
+* [Tmux](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-tmux/README.md) - Terminal multiplexer configuration.
+* [Zellij](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-zellij/README.md) - A modern, Rust-based terminal workspace.
+
 ### Programming Languages
 
 Language Config Path
@@ -64,9 +71,4 @@ Language Config Path
 | [Python Shell](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python-shell/README.md) | development/nix-python-shell | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
 | [Ruby](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-ruby/README.md) | development/nix-ruby | ![Nix](https://img.shields.io/badge/ruby-5277C3?style=for-the-badge&logo=ruby&logoColor=white)
 
-### Terminal & Workflow
 
-Standardized window management configuration.
-
-* [Tmux](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-tmux/README.md) - Terminal multiplexer configuration.
-* [Zellij](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-zellij/README.md) - A modern, Rust-based terminal workspace.
