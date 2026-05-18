@@ -4,6 +4,11 @@ General configurations for application and development environments.
 
 ## Development
 
+### AL/ML 
+ 
+- [ ] [Gemini cli](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-gemini-cli/README.md)
+- [ ] [Claude Code](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-claude-code/README.md)
+
 ### Runtime Languages
 
 - [ ] [Go](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-go/README.md)

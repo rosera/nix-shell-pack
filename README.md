@@ -26,8 +26,6 @@ Ready-to-use environments for specific software tools.
 
 General configuration for LLM based environments.
 
-* [Gemini CLI](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-gemini-cli/README.md) - Local LLM runner.
-* [Claude Code with Ollama](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-claude-code/README.md) - Retrieval Augmented Generation example.
 * [Ollama Local Mode](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-ollama/README.md) - Custom Ollama Local.
 * [Ollama Retrieval Augmented Generation (RAG) demo](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-ollama-rag/README.md) - Retrieval Augmented Generation example.
 
@@ -52,6 +50,12 @@ General configuration for utilities and tooling.
 
 Standardized shells for various programming languages and workflows.
 
+### AI & Machine Learning
+
+* [Gemini CLI](https://github.com/rosera/nix-shell-pack/tree/main/development/nix-gemini-cli/README.md) - Gemini CLI with GOOGLE AGENT HARNESS.
+* [Claude Code with Ollama](https://github.com/rosera/nix-shell-pack/tree/main/development/nix-claude-code/README.md) - Claude Code with ANTHROPIC AGENT HARNESS.
+* [Pi Coding Agent with Ollama](https://github.com/rosera/nix-shell-pack/tree/main/development/nix-pi-agent/README.md) - PI GENERIC AGENT HARNESS.
+
 ### Terminal & Workflow
 
 Standardized window management configuration.
@@ -70,5 +74,3 @@ Language Config Path
 | [Python](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python/README.md) | development/nix-python | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
 | [Python Shell](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-python-shell/README.md) | development/nix-python-shell | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
 | [Ruby](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-ruby/README.md) | development/nix-ruby | ![Nix](https://img.shields.io/badge/ruby-5277C3?style=for-the-badge&logo=ruby&logoColor=white)
-
-
