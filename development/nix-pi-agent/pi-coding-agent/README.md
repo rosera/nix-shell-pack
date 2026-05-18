@@ -1,9 +1,12 @@
 # Pi Coding Agent
 
+![Beta](https://img.shields.io/badge/Release%20Status-Beta-red)
+![Nix Version](https://img.shields.io/badge/nix-2.34.7-blue)
+
 Ref: https://github.com/NixOS/nixpkgs/blob/b3da656039dc7a6240f27b2ef8cc6a3ef3bccae7/pkgs/by-name/pi/pi-coding-agent/package.nix#L83
 
-
 ## Build
+
 
 1. Create `package.nix` based on above
 
@@ -31,7 +34,7 @@ Ref: https://github.com/NixOS/nixpkgs/blob/b3da656039dc7a6240f27b2ef8cc6a3ef3bcc
 
    > Generates a nix symlink for the result package
 
-4. Result symlink can now be used:
+4. Optional: Result symlink can now be used:
    ```bash
    nix-shell -p '(import ./default.nix {})'
    ```
