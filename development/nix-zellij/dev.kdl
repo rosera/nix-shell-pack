@@ -1,18 +1,39 @@
 layout {
+
    tab name="Zellij Dev" focus=true {
-     pane split_direction="vertical" {
-       pane {
-         name "Terminal#1"
-       }
-       pane split_direction="horizontal" {
-         pane {
-           name "Termina#2"
+     
+
+     pane split_direction="horizontal" {
+
+       pane split_direction="vertical" {
+
+         pane size="70%" {
+           name "Terminal#1"
          }
-         pane  {
-           name "Terminal#3"
+
+         pane split_direction="horizontal" {
+
+           pane size="70%" command="top" {
+             name "Termina#2"
+           }
+
+           pane size="30%" command="echo" {
+             name "Terminal#3"
+             args "Hello Terminal#3"
+           }
+
          }
+
        }
+
+       // Add Zellij Tab Bar
+       pane size=1 borderless=true {
+         // plugin location="zellij:compact-bar"
+         plugin location="zellij:tab-bar"
+       }
+
      }
+
    }
 
 }

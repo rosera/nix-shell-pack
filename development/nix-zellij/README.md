@@ -51,7 +51,7 @@ pkgs.mkShell {
     $VERSION
 
     # Perform Zellij Dev Layout
-    dev-zellij
+    exec dev-zellij
   '';
 }
 ```

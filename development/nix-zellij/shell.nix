@@ -11,7 +11,6 @@ pkgs.mkShell {
 
   name = "zellij-dev";
   nativeBuildInputs = with pkgs; [
-    go
     zellij
     zellijLayout
   ];
@@ -25,6 +24,6 @@ pkgs.mkShell {
     $VERSION
 
     # Perform Zellij Dev Layout
-    dev-zellij
+    exec dev-zellij
   '';
 }
