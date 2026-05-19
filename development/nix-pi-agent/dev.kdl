@@ -7,6 +7,8 @@ layout {
        // Launch CLAUDE HERE!
        pane command="ollama" {
          name "Pi"
+         // args "launch" "pi" "--model" "llama3.2"
+         // args "launch" "pi" "--model" "qwen3.6:35b"
          args "launch" "pi" "--model" "gemma4:e2b"
          start_suspended true
          borderless true
@@ -24,25 +26,39 @@ layout {
 
      pane split_direction="horizontal" {
 
-       pane size="60%" command="ollama" {
-         name "Server"
-         args "serve"
-       }
+       pane split_direction="vertical" {
 
-       pane size="20%" command="ollama" {
-         name "Chat"
-         // Set up MODEL HERE!
-         /* args "run" "llama3.2" */
-         args "run" "gemma4:e2b"
-         start_suspended true
-       }
+         pane size="70%" {
+         // pane {
+           name "Terminal"
+         }
 
-       pane size=1 borderless=true {
+         pane split_direction="horizontal" {
+
+           // pane command="ollama" {
+           pane size="60%" command="ollama" {
+             name "Ollama Server"
+             args "serve"
+           }
+
+           // pane command="ollama" {
+           pane size="20%" command="ollama" {
+             name "Ollama Server"
+             // args "run" "llama3.2"
+             // args "run" "qwen3.6:35b"
+             args "run" "gemma3:latest"
+             start_suspended true
+           }
+
+         }
+
+      }
+
+      pane size=1 borderless=true {
         // plugin location="zellij:compact-bar"
         plugin location="zellij:tab-bar"
-       }
+      }
+    }
 
-     }
-   }
-
+  }
 }
