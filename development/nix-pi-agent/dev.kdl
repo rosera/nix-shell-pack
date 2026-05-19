@@ -9,6 +9,7 @@ layout {
          name "Pi"
          // args "launch" "pi" "--model" "llama3.2"
          // args "launch" "pi" "--model" "qwen3.6:35b"
+         // args "launch" "pi" "--model" "gemma3:latest"
          args "launch" "pi" "--model" "gemma4:e2b"
          start_suspended true
          borderless true
@@ -46,7 +47,8 @@ layout {
              name "Ollama Server"
              // args "run" "llama3.2"
              // args "run" "qwen3.6:35b"
-             args "run" "gemma3:latest"
+             // args "run" "gemma3:latest"
+             args "run" "gemma4:e2b"
              start_suspended true
            }
 
