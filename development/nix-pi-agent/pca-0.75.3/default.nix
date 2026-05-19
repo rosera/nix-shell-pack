@@ -52,14 +52,34 @@ pkgs.stdenv.mkDerivation rec {
   dontBuild = true;
 
   installPhase = ''
+    runHook preInstall
+  
     mkdir -p $out/bin
     mkdir -p $out/share/${pname}
-
-    cp -r ./* $out/share/${pname}/
-
+  
+    # Copy everything from the unpacked source
+    cp -R $src/. $out/share/${pname}/
+  
+    chmod +x $out/share/${pname}/${target.executable} || true
+  
     makeWrapper \
       $out/share/${pname}/${target.executable} \
       $out/bin/pi \
       --run "cd $out/share/${pname}"
+  
+    runHook postInstall
   '';
+
+
+  # installPhase = ''
+  #   mkdir -p $out/bin
+  #   mkdir -p $out/share/${pname}
+
+  #   cp -r ./* $out/share/${pname}/
+
+  #   makeWrapper \
+  #     $out/share/${pname}/${target.executable} \
+  #     $out/bin/pi \
+  #     --run "cd $out/share/${pname}"
+  # '';
 }
