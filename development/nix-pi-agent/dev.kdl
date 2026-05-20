@@ -29,8 +29,8 @@ layout {
 
        pane split_direction="vertical" {
 
+         // pane size="70%" command="ollama" {
          pane size="70%" {
-         // pane {
            name "Terminal"
          }
 
