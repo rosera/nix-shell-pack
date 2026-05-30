@@ -12,7 +12,7 @@ let
 
   # Path to the default.nix folder we just built
   # pi-agent = import ./pi-coding-agent/default.nix { inherit pkgs; };
-  pi-agent = import ./pca-0.75.3/default.nix { inherit pkgs; };
+  pi-agent = import ./pca-0.78.0/default.nix { inherit pkgs; };
 in
 pkgs.mkShell {
 
