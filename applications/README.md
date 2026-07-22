@@ -4,10 +4,10 @@ General configurations for application and development environments.
 
 ## Applications
 
+### Document Processing 
 
-### Container Orchestration
-
-- [ ] [Minikube](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-minikube/README.md)
+- [ ] [Pandoc](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-pandoc/README.md)
+- [ ] [Hugo](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-hugo/README.md)
 
 ### Image Processing
 
@@ -23,3 +23,5 @@ General configurations for application and development environments.
 - [ ] [Android Studio](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-android-studio/README.md)
 - [ ] [Flutter/Dart](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-flutter/README.md)
 - [ ] [Firebase](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-firebase/README.md)
+- [ ] [Firebase GenKit](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-firebase-genkit/README.md)
+- [ ] [ADK](https://github.com/rosera/nix-shell-pack/tree/main/applications/nix-adk/README.md)
