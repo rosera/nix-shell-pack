@@ -24,7 +24,6 @@ random_item() {
     printf '%s' "${array[RANDOM % ${#array[@]}]}"
 }
 
-
 generate_session_name() {
   local adjectives=(
     happy brave calm eager fancy gentle jolly kind
@@ -86,6 +85,13 @@ if ! tmux has-session -t "$SESSION" 2>/dev/null; then
         -t "$SESSION:0.0" \
         "hugo version; tree -L 2" \
         C-m
+fi
+
+# -----------------------------------------------------------------------------
+# If TMPDIR points to a stale nix-shell folder, fall back to /tmp
+# -----------------------------------------------------------------------------
+if [ ! -d "$TMPDIR" ]; then
+   export TMPDIR="/tmp"
 fi
 
 # -----------------------------------------------------------------------------
