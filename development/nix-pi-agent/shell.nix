@@ -1,30 +1,42 @@
 with import <nixpkgs> {};
 
 let
-  # External Script: This reads './dev.tmux' and puts it into a binary named 'dev-tmux'
-  # tmuxLayout   = pkgs.writeShellScriptBin "dev-tmux" (builtins.readFile ./dev.tmux);
+  ## Tmux Custom Script
+  ##  External Script: This reads './dev.tmux' and puts it into a binary named 'dev-tmux'
+  tmuxLayout   = pkgs.writeShellScriptBin "dev-tmux" (builtins.readFile ./dev.tmux);
 
-  # External Script: This reads './dev.kdl' and puts it into a binary named 'dev-zellij'
-  scriptZellijLayout = pkgs.writeText "dev.kdl" (builtins.readFile ./dev.kdl);
-  zellijLayout = pkgs.writeShellScriptBin "dev-zellij" ''
-    ${pkgs.zellij}/bin/zellij --layout ${scriptZellijLayout}
-  '';
+  ## Zellij Custom Script
+  ## External Script: This reads './dev.kdl' and puts it into a binary named 'dev-zellij'
+  ## scriptZellijLayout = pkgs.writeText "dev.kdl" (builtins.readFile ./dev.kdl);
+  ## 
+  ## zellijConfig = pkgs.writeText "config.kdl" ''
+  ##   default_mode "normal"
+  ## '';
+
+  ## zellijLayout = pkgs.writeShellScriptBin "dev-zellij" ''
+  ##   ${pkgs.zellij}/bin/zellij \
+  ##     --config ${zellijConfig} \
+  ##     --layout ${scriptZellijLayout}
+  ## '';
 
   # Path to the default.nix folder we just built
   # pi-agent = import ./pi-coding-agent/default.nix { inherit pkgs; };
-  pi-agent = import ./pca-0.75.3/default.nix { inherit pkgs; };
+  # pi-agent = import ./pca-0.75.3/default.nix { inherit pkgs; };
 in
 pkgs.mkShell {
 
   name = "pi-agent";
+
   nativeBuildInputs = with pkgs; [
+    oh-my-zsh
     ollama
-    pi-agent
-    # tmux
-    # tmuxLayout
+    # pi-agent
+    pi-coding-agent
+    tmux
+    tmuxLayout
     vim
-    zellij
-    zellijLayout
+    # zellij
+    # zellijLayout
   ];
 
   LANGUAGE = "Pi Coding Agent";
@@ -40,8 +52,8 @@ pkgs.mkShell {
     trap "tmux kill-session -t go-dev" EXIT
 
     # Perform Tmux Dev Layout
-    # exec dev-tmux
+    exec dev-tmux
 
-    exec dev-zellij
+    # exec dev-zellij
   '';
 }

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # DEFAULT_PORT
-DEFAULT_PORT=8080
+DEFAULT_PORT=8089
+
 # Detect if we are on a Mac
 if [[ "$OSTYPE" == "darwin"* ]]; then
   SHELL_CMD="zsh"
@@ -25,22 +26,34 @@ echo "Using SESSION=$SESSION"
 # Check if the session already exists
 tmux has-session -t "$SESSION" 2>/dev/null
 
-# Create new sessions [Optional: ZSH default shell]
+# Create new session matching the dev.kdl layout if it doesn't exist
 if [ $? != 0 ]; then
-  tmux new-session -d -s "$SESSION" "$SHELL_CMD"
-  # tmux split-window -h -t "$SESSION" "$SHELL_CMD"
-  tmux split-window -v -t "$SESSION" "$SHELL_CMD"
+  # ----------------------------------------------------
+  # Window 1: Pi Agent (matches "Pi Agent" tab in dev.kdl)
+  # ----------------------------------------------------
+  tmux new-session -d -s "$SESSION" -n "Pi Agent" "$SHELL_CMD"
+  tmux send-keys -t "$SESSION:Pi Agent" "ollama launch pi --model gemma4:e2b" C-m
 
-  # Optional: Send terminal command to a pane if needed
-  # tmux send-keys -t "$SESSION":0.0 "ls" C-m
-  #
-  # Send the hugo command to pane 0
-  # Example: C-m at the end simulates pressing "Enter"
-  # tmux send-keys -t $SESSION:0 "until hugo serve -D -p $PORT; do echo 'Command failed. Press Enter to retry...'; read; done" C-m
+  # ----------------------------------------------------
+  # Window 2: Ollama (matches "Ollama" tab in dev.kdl)
+  # ----------------------------------------------------
+  # Create second window
+  tmux new-window -t "$SESSION" -n "Ollama" "$SHELL_CMD"
 
-  tmux send-keys -t "$SESSION":0
+  # Split window horizontally: Left pane (Terminal, 70% width), Right pane (30% width)
+  tmux split-window -h -p 30 -t "$SESSION:Ollama"
 
+  # Split the right pane vertically to create top and bottom sections
+  tmux split-window -v -p 40 -t "$SESSION:Ollama.1"
 
+  # Assign commands to the respective panes in the Ollama window
+  # Pane 0 (Left): Terminal shell (left as default shell)
+  # Pane 1 (Top Right): Ollama Server
+  tmux send-keys -t "$SESSION:Ollama.1" "ollama serve" C-m
+
+  # Pane 2 (Bottom Right): Ollama Run Model
+  tmux send-keys -t "$SESSION:Ollama.2" "ollama run gemma4:e2b" C-m
 fi
 
+# Attach to the tmux session
 tmux attach-session -t "$SESSION"
