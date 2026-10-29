@@ -8,8 +8,11 @@ pkgs.mkShell {
 
   name = "tmux-dev";
   nativeBuildInputs = with pkgs; [
+    lsof
+    tree
     tmux
     tmuxLayout
+    zsh
   ];
 
   LANGUAGE = "Tmux";

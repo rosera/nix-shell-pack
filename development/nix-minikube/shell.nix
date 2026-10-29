@@ -5,14 +5,14 @@ pkgs.mkShell {
 
   nativeBuildInputs = with pkgs; [
     cacert        # Support certificates
-    # docker      # Install at system level
+    openssl
     kubectl
     go
-    #minikube    # Install at sytem level
-    openssl
-    # qemu       # Install at system level
-    #ubridge
     vim
+    # docker      # Install at system level
+    # minikube    # Install at sytem level
+    # qemu        # Install at system level
+    # ubridge
   ];
 
   # Docker configuration
