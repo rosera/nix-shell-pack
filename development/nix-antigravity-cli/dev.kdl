@@ -1,0 +1,39 @@
+layout {
+
+   tab name="Antigravity" focus=true {
+
+     pane split_direction="horizontal" {
+
+       // Launch GEMINI CLI HERE!
+       pane command="agy" {
+         name "Antigravity CLI"
+         // args "--model" "gemini-3.1-flash-lite-preview"
+         args "--model" "gemini-3.8-flash"
+         start_suspended true
+         borderless true
+       }
+
+       pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+       }
+
+     }
+   }
+
+   tab name="Terminal" {
+
+     // TERMINAL for commands
+     pane split_direction="horizontal" {
+
+        pane {
+          name "Terminal"
+        }
+
+        pane size=1 borderless=true {
+         plugin location="zellij:tab-bar"
+        }
+
+      }
+   }
+
+}

@@ -1,0 +1,17 @@
+{ pkgs ? import <nixpkgs> {
+    config.allowUnfree = true;
+  }
+}:
+
+let
+  antigravity-cli =
+    pkgs.callPackage ./nix/antigravity-cli/package.nix {};
+in
+
+pkgs.mkShell {
+  packages = with pkgs; [
+    antigravity-cli
+
+    # your other packages...
+  ];
+}
