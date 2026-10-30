@@ -52,9 +52,11 @@ Standardized shells for various programming languages and workflows.
 
 ### AI & Machine Learning
 
-* [Gemini CLI](https://github.com/rosera/nix-shell-pack/tree/main/development/nix-gemini-cli/README.md) - Gemini CLI with GOOGLE AGENT HARNESS.
-* [Claude Code with Ollama](https://github.com/rosera/nix-shell-pack/tree/main/development/nix-claude-code/README.md) - Claude Code with ANTHROPIC AGENT HARNESS.
-* [Pi Coding Agent with Ollama](https://github.com/rosera/nix-shell-pack/tree/main/development/nix-pi-agent/README.md) - PI GENERIC AGENT HARNESS.
+* [Pi Coding Agent with Ollama](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-pi-agent/README.md) - PI GENERIC AGENT HARNESS.
+* [Antigravity CLI](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-antigravity-cli/README.md) - PI GENERIC AGENT HARNESS.
+* [Gemini CLI](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-gemini-cli/README.md) - Gemini CLI with GOOGLE AGENT HARNESS.
+* [Claude Code with Ollama](https://github.com/rosera/nix-shell-pack/blob/main/development/nix-claude-code/README.md) - Claude Code with ANTHROPIC AGENT HARNESS.
+
 
 ### Terminal & Workflow
 
