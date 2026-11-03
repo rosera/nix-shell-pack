@@ -57,6 +57,76 @@ pkgs.mkShell {
 }
 ```
 
+
+## Example: Ollama + Go dev.tmux
+Setup a `Ollama` + `go` development environment using tmux dev configuration.
+
+```bash
+#!/usr/bin/env bash
+# DEFAULT_PORT
+DEFAULT_PORT=8080
+
+# Detect OS shell
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  SHELL_CMD="zsh"
+else
+  SHELL_CMD="bash"
+fi
+
+# Generate random Docker-like name
+generate_session_name() {
+  ADJECTIVES=(happy brave calm eager fancy gentle jolly kind lucky nice proud quick shiny witty bold clever)
+  NOUNS=(tiger panda eagle otter fox whale lion falcon wolf bear koala shark)
+  adj=${ADJECTIVES[$RANDOM % ${#ADJECTIVES[@]}]}
+  noun=${NOUNS[$RANDOM % ${#NOUNS[@]}]}
+  echo "${adj}-${noun}-dev"
+}
+
+SESSION=${2:-$(generate_session_name)}
+echo "Using SESSION=$SESSION"
+
+# Check if the session already exists
+tmux has-session -t "$SESSION" 2>/dev/null
+
+# Create new session if it doesn't exist
+if [ $? != 0 ]; then
+  # ==========================================
+  # Window 1: Go Dev (Equivalent to "Go Dev" tab)
+  # ==========================================
+  tmux new-session -d -s "$SESSION" -n "Go Dev" "$SHELL_CMD"
+
+  # Split vertically (-v) with -p 20 to allocate 20% for Build and 80% for Dev
+  tmux split-window -v -p 20 -t "$SESSION:0" "$SHELL_CMD"
+
+  # Select back to the top "Dev" pane
+  tmux select-pane -t "$SESSION:0.0"
+
+  # ==========================================
+  # Window 2: Ollama (Equivalent to "Ollama" tab)
+  # ==========================================
+  # Create the second window named "Ollama" (this will be window index 1)
+  tmux new-window -t "$SESSION" -n "Ollama" "$SHELL_CMD"
+
+  # Split window horizontally (-h) to create left ("Terminal") and right sides
+  tmux split-window -h -t "$SESSION:1.0" "$SHELL_CMD"
+
+  # Split the right pane vertically (-v) into top and bottom halves
+  tmux split-window -v -t "$SESSION:1.1" "$SHELL_CMD"
+
+  # Run commands in the Ollama panes on the right side
+  # Top-right pane: ollama serve
+  tmux send-keys -t "$SESSION:1.1" "ollama serve" C-m
+
+  # Bottom-right pane: ollama run gemma4:e4b
+  tmux send-keys -t "$SESSION:1.2" "ollama run gemma4:e4b" C-m
+
+  # Focus on the "Ollama" window by default (matching focus=true in dev.kdl)
+  tmux select-window -t "$SESSION:1"
+fi
+
+tmux attach-session -t "$SESSION"
+```
+
 ## Example: Hugo dev.tmux
 Setup a `Hugo` development environment using tmux dev configuration.
 
