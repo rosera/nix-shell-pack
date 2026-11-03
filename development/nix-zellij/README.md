@@ -55,3 +55,59 @@ pkgs.mkShell {
   '';
 }
 ```
+
+## Example: Ollama + Go dev.tmux
+Setup a `Ollama` + `go` development environment using zellij dev configuration.
+
+```bash
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    // Go Dev
+    tab name="Go Dev" {
+        pane name="Dev" size="80%" {
+            command "zsh"
+        }
+        pane name="Build" size="20%" {
+            command "zsh"
+        }
+    }
+
+    // Ollama Dev
+
+    tab name="Ollama" focus=true {
+
+     pane split_direction="vertical" {
+       pane {
+         name "Terminal"
+       }
+
+       pane split_direction="horizontal" {
+
+         pane command="ollama" {
+           name "Ollama Server"
+           args "serve"
+         }
+
+         pane command="ollama" {
+           name "Ollama Server"
+           /* args "run" "llama3.2" */
+           args "run" "gemma4:e4b"
+           start_suspended true
+         }
+
+       }
+
+     }
+   }
+
+}
+```
