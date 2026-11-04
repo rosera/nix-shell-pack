@@ -10,6 +10,9 @@ let
   # Use the antigravity-cli package
   antigravity-cli = pkgs.callPackage ./nix/antigravity-cli/package.nix {};
 
+  # External Script: This reads './dev.tmux' and puts it into a binary named 'dev-tmux'
+  # tmuxLayout   = pkgs.writeShellScriptBin "dev-tmux" (builtins.readFile ./dev.tmux);
+
   # External Script: This reads './dev.kdl' and puts it into a binary named 'dev-zellij'
   scriptZellijLayout = pkgs.writeText "dev.kdl" (builtins.readFile ./dev.kdl);
 
@@ -28,8 +31,8 @@ pkgs.mkShell {
 
   nativeBuildInputs = with pkgs; [
     antigravity-cli  # Google antigravity
-    lit              # Test LLVM
-    ollama           # OLLAMA API Model Runner
+    # lit              # Test LLVM
+    # ollama           # OLLAMA API Model Runner
     vim              # Vim Editor
     zellij           # Zellij Window Multiplexer
     zellijLayout     # Zellij window custom config
