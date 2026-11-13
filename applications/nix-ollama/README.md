@@ -42,3 +42,76 @@ pkgs.mkShell {
   '';
 }
 ```
+
+## Example: Ollama dev.kdl
+
+Setup `ollama` environment using `zellij` and `kdl`.
+
+```
+layout {
+  // Automatically applies the clean tab-bar to every tab
+  default_tab_template {
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+  }
+
+  // Tab 1: Dedicated Instructions Tab
+  tab name="Instructions" focus=true {
+    pane command="bash" {
+      name "Environment Guide"
+      args "-c" "cat << 'EOF'
+======================================================
+               OLLAMA ENVIRONMENT GUIDE
+======================================================
+
+1. Switch to the 'Ollama' tab using the tab bar above.
+2. To see available models, focus the 'Ollama List' pane 
+   and press Enter (or type: ollama list).
+3. To download and chat with a model, use 'Ollama Models':
+   ollama run <model-name>
+   (Example: ollama run gemma4:e4b)
+4. Type /bye to exit an active model session.
+5. Press Ctrl+q to quit the entire Zellij session at once.
+======================================================
+EOF
+exec bash"
+    }
+  }
+
+  // Tab 2: Main Ollama Workspace
+  tab name="Ollama" {
+    pane split_direction="vertical" {
+
+      // Left: Main Terminal (70% Width)
+      pane size="70%" {
+        name "Terminal"
+      }
+
+      // Right: Ollama Stack (30% Width)
+      pane split_direction="horizontal" size="30%" {
+
+        // Top: Background Server (35% Height)
+        pane size="35%" command="ollama" {
+          name "Ollama Server"
+          args "serve"
+        }
+
+        // Middle: On-Demand Model List (30% Height)
+        pane size="30%" command="ollama" {
+          name "Ollama List"
+          args "list"
+          start_suspended true
+        }
+
+        // Bottom: Interactive Prompt Terminal (35% Height, focused by default)
+        pane size="35%" focus=true {
+          name "Ollama Models"
+        }
+
+      }
+    }
+  }
+}
+```
